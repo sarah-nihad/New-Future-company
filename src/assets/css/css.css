@@ -1,0 +1,241 @@
+#min1_home1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #000;
+}
+#mainCont1 {
+    max-width: 1800px;
+    width: 100%;
+}
+#abou_sh a {
+    color: #fff;
+}
+
+#abou_sh a:hover {
+    color: #b15f6c;
+    text-decoration: #b15f6c;
+    transition-duration: '.3s';
+    transition-timing-function: 'linear';
+}
+
+.homeBgbimg {
+    background-image: url(../img/intro-img6.jpg);
+    width: 100%;
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+/* position: absolute; */
+}
+
+#homeBgMainDiv {
+    position: relative;
+    top: 180px;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#homeBgMainP1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    width: 50%;
+}
+
+#btn {
+    margin-right: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+#getInbtn {
+    position: relative;
+    z-index: 1;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#btn #getInbtn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* border-radius: 50px; */
+    background: #2876e2;
+    background: linear-gradient(to right, #2876e2 0, #3f8efc 100%);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    transition: all 400ms ease-in-out;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+
+}
+
+.btn.btn-border>i,
+.btn.btn-border>span,
+.btn.btn-border>svg {
+    position: relative;
+    z-index: 1;
+}
+
+#btn {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 16px;
+    color: #000;
+    fill: #fff;
+    text-decoration: none;
+    padding: .75em 1.75em;
+    border-radius: .375rem;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .25s;
+    width: 230px;
+}
+#btn:hover {
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+#btn #getInbtn:hover::before {
+    transform: scaleY(1);
+    color: #fff;
+}
+#downHeaderNavContiner{
+    margin-top: 600px;
+}
+#ServicesContainer{
+    width: 100%;
+    background-color: #fff;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 5%;
+}
+#mainServices{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    /* margin-top: 5%; */
+}
+#MainCardServices{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    box-shadow: 0px 0px 3px 0px #646464;
+    border-radius: 5px;
+    position: relative;
+    margin: 10px;
+}
+.hometab-heading {
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    line-height: 111px;
+    /* border: 5px solid #a6aaff; */
+    /* border: solid; */
+    margin-bottom: 20px;
+    border-bottom: 5px solid #a6aaff;
+}
+#img_CardServices{
+    width: 100px;
+    height: 100px;
+    background-color: #2c7ae7;
+    background: linear-gradient(to right,#2876e2 0,#3f8efc 100%);
+    color: #fff;
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#img_CardServices2{
+    position: absolute;
+    left: -2rem;
+    top: 2rem;
+    z-index: 1;
+    opacity: 0;
+    color: #fff;
+    fill: #fff;
+    transition: all .25s .1s;
+}
+
+#title_CardServices{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 75px;
+}
+#desc_CardServices{
+    text-align: center;
+    padding: 10px;
+    color: #706f6f;
+}
+#MainCardServices:hover{
+    background-color: #2c7ae7;
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0.125rem 0.25rem 1.25rem 0.0875rem rgb(45 45 45 / 13%);
+   cursor: pointer;
+}
+#MainCardServices:hover #img_CardServices2{  
+    opacity: 0.14; 
+}
+#MainCardServices:hover #desc_CardServices{ 
+    color: #fff;
+}
+#MainCardServices:hover #img_CardServices{ 
+    color: #2c7ae7;
+    background-color: #fff;
+    background: linear-gradient(to right,#dfe1e6 0,#c5c7ca 100%);
+}
+#servicesImg2{
+    font-size: 500px;
+}
+@media (max-width: 799px) {
+    #homeBgMainDiv{
+        width: 65%;
+    }
+    #homeBgMainP1{
+        width: 65%;
+    }
+    #servicesImg2{
+        font-size: 250px;
+    }
+  }
+  @media (max-width: 369px) {
+    #homeBgMainDiv{
+        width: 85%;
+    }
+    #homeBgMainP1{
+        width: 85%;
+    }
+    #servicesImg2{
+        font-size: 250px;
+    }
+  }

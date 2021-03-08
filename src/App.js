@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import './assets/css/css.css';
+import './assets/css/test.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Context from './assets/js/context';
 import Home from './component/main/Home';
@@ -12,7 +14,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-  
+      Lang:'en'
     };
    
   }
