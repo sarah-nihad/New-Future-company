@@ -62,7 +62,7 @@ class Services extends React.Component {
             <Context.Consumer>
                 {ctx => {
                     return (
-                        <div className='hometab box' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',flexDirection:'column' }}>
+                        <div className='hometab box' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center',flexDirection:'column',paddingTop:'5%' }}>
                        
                            
                           

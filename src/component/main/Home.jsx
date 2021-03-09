@@ -7,6 +7,9 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from 'react-router-dom';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import Services from './Services';
+import WhyUs from './WhyUs';
+import Particles from 'react-particles-js';
+
 class Home extends React.Component {
 
     constructor(props) {
@@ -26,9 +29,28 @@ class Home extends React.Component {
                     return (
                         <div id='min1_home1' >
                             <div id='mainCont1'>
+                           
                                 <div className='homeBgbimg'  >
                                     <NavBar />
+                                    <Particles style={{ position: 'absolute'}}
+                                        params={{
+                                            particles: {
+                                                number: {
+                                                    value: 200,
+                                                    density: {
+                                                        enable: true,
+                                                        value_area: 2000,
+                                                    }},
+                                                shape: {
+                                                    type: "circle",
+                                                    stroke: {
+                                                        "width": 2,
+                                                        "color": "#fff"
+                                                    }},
+                                            } }}
+                                    />
                                     <div style={{ position: 'relative' }} >
+                                        
                                         <div id='homeBgMainDiv' >
                                             <div id='homeBgMainP1'  >IT Solution for Your Business</div>
                                             <div></div>
@@ -38,11 +60,12 @@ class Home extends React.Component {
                                                 </div>
                                             </Link>
                                         </div>
+                                        
                                     </div>
                                     <div id='downHeaderNavContiner'>
 
                                         <Services />
-
+<WhyUs />
 
                                         <ScrollUpButton
                                             StopPosition={0}
