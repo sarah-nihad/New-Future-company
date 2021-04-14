@@ -15,8 +15,8 @@
 }
 
 #abou_sh a:hover {
-    color: #b15f6c;
-    text-decoration: #b15f6c;
+    color: #2876e2;
+    text-decoration: #2876e2;
     transition-duration: '.3s';
     transition-timing-function: 'linear';
 }
@@ -28,7 +28,7 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 600px;
+    min-height: 500px;
 /* position: absolute; */
 }
 
@@ -135,6 +135,16 @@
     padding-bottom: 5%;
     padding-top: 5%;
 }
+#ProjectContainer{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 5%;
+  
+}
 #mainServices{
     display: flex;
     align-items: center;
@@ -162,8 +172,9 @@
     /* line-height: 111px; */
     /* border: 5px solid #a6aaff; */
     /* border: solid; */
+    color: #d37541;
     margin-bottom: 20px;
-    border-bottom: 5px solid #a6aaff;
+    border-bottom: 2px solid #a6aaff;
 }
 #img_CardServices{
     width: 100px;
@@ -216,12 +227,13 @@
     background: linear-gradient(to right,#dfe1e6 0,#c5c7ca 100%);
 }
 #servicesImg2{
-    font-size: 500px;
+    font-size: 400px;
 }
 .whyUsCont{
     width: 100%;
-    background-color: #cdcdd1;
-    padding-top: 5%;
+    background-color: #f0f4f8;
+    /* padding-top: 5%; */
+    padding-bottom: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -276,7 +288,312 @@
     font-size: 25px;
     font-weight: 700;
 }
+#mainCardProject{
+    margin: 12px;
+    border-radius: 10px; 
+}
+#card{
+    height: 400px;
+    width: 500px;
+    background-color: #95989b;
+    overflow: hidden;     
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;    
+    word-wrap: break-word;   
+    background-clip: border-box;
+}
+#card #imgBox,
+#card #details{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+#card #imgBox{
+    top:0;
+    left:0;
+}
+
+#card:hover #imgBox{
+    top:0;
+    left:-100%;
+    cursor: pointer;
+}
+#card #imgBox img{
+    width:100%;
+    height: 400px;
+    /* border-radius: 10px; */
+}
+
+#card #details{
+    top:0;
+    left:100%;
+    height: 100%;
+}
+#card:hover #details{
+    top:0;
+    left:0;
+    cursor: pointer;
+}
+#details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+/* #details div{
+    margin: 5px 15px 0px 25px;
+} */
+#project_title{
+    color: rgb(26 70 124);
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #e1e4e7;
+    padding: 10px;
+}
+#projectIcon{
+    height: 65px;
+    width: 65px;
+    border: 2px solid;
+    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    flex-direction: column;
+    font-size: 10px;
+}
+#project_bgb{
+  background-color: #fff;
+}
+#project_bgb2{
+    background-image: url(../img/mj22.jpg);
+    /* background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+ min-height: 600px; */
+ width: 100%;
+ height: 70vh;
+}
+#teamHomeSection{
+    background-image: url(../img/download.jpg);
+min-height: 600px;
+}
+#logoBgb{
+    background-color: #fff;
+}
+#aboutTitleTeam{
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+     
+      padding-top: 5%;
+  }
+/*////////////*Contact Us */
+#sectionContactBgImg {
+    background-image: url(../img/lap.jpg);
+    min-height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #contactHeader_bgb{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  #p1ss {
+    color: #d37541;
+    font-size: 40px;
+    line-height: 57px;
+    font-weight: 700;
+  }
+  #contacthome {
+    /* margin-top: 10%; */
+    padding-top: 5%;
+    background-color: #fffdfd;
+    /* color:#346BAE; */
+    height: 100%;
+    padding-bottom: 3%;
+  }
+  #contactpage {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  #maprow {
+    width: 90%;
+  }
+  #gmap_canvas {
+    text-align: right;
+    height: 356px;
+    width: 100%;
+    overflow: hidden;
+    background: none;
+    padding-top: 20px;
+  }
+  #contactrow {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    color: #d37541;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contactMainCard{
+    width: 300px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    height: 252px;
+    margin: 10px;
+  }
+  .contactMainCard:hover{
+  box-shadow:0 0 9px 0px #a5a0a0;
+  }
+  #sarstylefont {
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #27539b;
+  }
+  #contactTextAdd {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  #contactMainForm {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #textstyle {
+    padding-left: 10px;
+    height: 50px;
+  }
+  #area {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #BtnContactUSHome {
+    width: 150px;
+    height: 50px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    background-color: #d37541;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  #BtnContactUSHome:hover {
+    border: 2px solid #d37541;
+    background-color: #fff;
+    color: #d37541;
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+  }
+  
+  #BtnContactUSHome:active {
+    border: none;
+    background-color: #d37541;
+    color: #fff;
+    transform: scale(1);
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .side_text{
+      color: #fff;
+  }
+  .laptop-img{
+    width: 118vh;
+    height: 58.5vh;
+    position: absolute;
+    right: 6.3vh;
+    top: 25.5vh;
+    z-index: 2;
+  }
+  video {
+    width: 92vh;
+    height: 58.5vh;
+    position: absolute;
+    right: 19.3vh;
+    top: 22.5vh;
+    z-index: 1;
+}
+  @media (min-width: 800px) {
+    #aboutTitleTeam{
+        margin-bottom: 15%;
+    }
+  }
+  @media screen and (max-width: 1024px){
+.laptop-img {
+    top: 22% ;
+    width: 52% ;
+    height: 43.5% ;
+    overflow: hidden;
+    right: 8% ;
+}
+video {
+    width: 40% ;
+    height: 52.5% ;
+    right: 14% ;
+    top: 16.5% ;
+    overflow: hidden;
+}
+}
 @media (max-width: 799px) {
+    .laptop-img {
+        top: 27% ;
+        right: 3% ;
+        width: 50% ;
+        height: 31.5% ;
+    }
+    video {
+        right: 8% ;
+        top: 14.5% ;
+    }
+    #card{
+        width: 400px;
+    }
+    #aboutTitleTeam{
+        margin-bottom: 30%;
+            }
     #homeBgMainDiv{
         width: 65%;
     }
@@ -287,7 +604,27 @@
         font-size: 250px;
     }
   }
-  @media (max-width: 369px) {
+  @media (max-width: 500px) {
+    .laptop-img {
+        top: 27% ;
+        right: 3% ;
+        width: 77% ;
+        height: 26.5% ;
+    }
+    video {
+        right: 0% ;
+        top: 29.5% ;
+        width: 352px;
+        height: 123px;
+    }
+  }
+  @media (max-width: 375px) {
+    #card{
+        width: 300px;
+    }
+    #aboutTitleTeam{
+        margin-bottom: 50%;
+            }
     #homeBgMainDiv{
         width: 85%;
     }
@@ -297,4 +634,16 @@
     #servicesImg2{
         font-size: 250px;
     }
+    .laptop-img {
+        top: 32% ;
+        right: 5% ;
+        width: 74% ;
+        height: 16.5% ;
+    }
+    video{
+        right: 13% ;
+        top: 30.5% ;
+            width: 58% ;
+    height: 17.5% ;
+    } 
   }

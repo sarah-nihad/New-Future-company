@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 html:not([data-scroll='2']) {
     .ss {
         height: 120px;
@@ -31,6 +32,27 @@ html:not([data-scroll='2']) {
         align-items: center;
         justify-content: space-between;
     }
+    #amara_img {
+        height: 80px;
+    }
+
+    #amara_text {
+        font-size: 17px;
+    }
+
+    .ss1 {
+        height: 120px;
+        top: 0;
+        background-color: #221a1c;
+
+        box-shadow: 0 0 .5em rgba(0, 0, 0, .0);
+        color: #fff;
+        display: flex;
+        font-size: 22px;
+        font-weight: 800;
+        justify-content: center;
+    }
+
 }
 
 html:not([data-scroll='0']) {
@@ -41,12 +63,11 @@ html:not([data-scroll='0']) {
         height: 120px;
         top: 0;
         color: #fff;
-        background-color: #00000091;
+        background-color: #221a1c;
         box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
         margin-top: 0px;
 
     }
-   
     .navbar {
         transition-duration: 1s;
         position: fixed;
@@ -58,10 +79,27 @@ html:not([data-scroll='0']) {
         margin-top: 0px;
 
     }
-  
+    #amara_img {
+        height: 70px;
+    }
+
+    #amara_text {
+        font-size: 16px;
+    }
+
 }
 
 * {
     box-sizing: border-box;
 }
 
+.item {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    padding-top: 75px;
+    background: #ccc;
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+}

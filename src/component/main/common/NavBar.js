@@ -1,239 +1,177 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import { Link } from 'react-router-dom';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import HomeIcon from '@material-ui/icons/Home';
-import InfoIcon from '@material-ui/icons/Info';
-import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
-import Context from '../../../assets/js/context';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Cookies from 'universal-cookie';
-const cookies = new Cookies();
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import { Link  } from 'react-router-dom'
+import { Navbar  } from 'react-bootstrap';
+import CloseIcon from '@material-ui/icons/Close';
+
+
+const drawerWidth = '100%';
+
 const useStyles = makeStyles(theme => ({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
   root: {
-    flexGrow: 1,
+    display: 'flex',
+
   },
   appBar: {
-    flexGrow: 1,
-    backgroundColor: '#221a1c',
-    [theme.breakpoints.up('md')]: {
-      height: '100%',
-    },
-    [theme.breakpoints.down('md')]: {
-      height: '100%',
-    },
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+
+
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up('lg')]: {
-      display: 'block',
-    },
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
   },
-  title: {
-    flexGrow: 1,
-    paddingLeft: 0,
-    [theme.breakpoints.up('md')]: {
-      paddingLeft: 60,
-    },
-  },
-  MenuBTNNavContiner: {
-    flexGrow: 0.3,
+  hide: {
     display: 'none',
-    fontSize: 18,
-    fontWeight: 400,
-    cursor: 'pointer',
-    width: '50%',
-    textAlign: 'center',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-      justifyContent: 'space-between',
-
-    },
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+    display: 'flex',
 
   },
+  drawerPaper: {
+    width: drawerWidth,
+    overflowY: 'visible',
+    backgroundColor: '#000000c4',
+    color: '#757575',
+    height: '100%'
+  },
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
 
-  spann: {
-    '&:hover': {
-      color: '#d37541',
-      transitionDuration: '.3s',
-      transitionTimingFunction: 'linear',
-      // textAlign:'center'
-    },
-  }
-
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
 }));
 
+export default function PersistentDrawerLeft(props) {
 
-
-function SearchAppBar() {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (side, open) => event => {
-    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-    setState({ ...state, [side]: open });
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
   };
 
   return (
-    <Context.Consumer>
-      {ctx => {
-        return (
-          <div className={classes.root}>
-            <AppBar position="static" className='ss'>
-              <Toolbar>
-                <div onClick={toggleDrawer('left', true)}>    <IconButton
-                  edge="start"
-                  className={classes.menuButton}
-                  color="inherit"
-                  aria-label="open drawer"
-                >
-                  <MenuIcon />
+
+   
+        <div className={classes.root}>
+          <CssBaseline />
+          <AppBar id='ss'
+            position="fixed"
+            className={clsx(classes.appBar, {
+              [classes.appBarShift]: open,
+            })}
+          >
+            <Navbar expand="lg" >
+              <div
+                onClick={handleDrawerOpen}
+                style={{ cursor: 'pointer' }}
+              >
+             <img src={require('../../../assets/img/menu.png')} id='imgLeftNav' alt='img' />
+              </div>
+
+              <Link to='/'>
+                 {/* <img src={require('../../assets/img/orionLogo.png')} alt='img' id='imgNavbar' /> */}
+                 </Link>
+              <div style={{ width: 90 }} />
+
+
+
+            </Navbar>
+
+
+          </AppBar>
+          <Drawer
+            className={classes.drawer}
+            variant="persistent"
+            anchor="top"
+            open={open}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+
+
+            <div >
+              <div style={{ display: 'flex', width: '100%', flexDirection: 'row-reverse', paddingRight: '10px' }} >
+                <IconButton onClick={handleDrawerClose} style={{ color: '#fff' }} >
+                  {theme.direction === 'rtl' ? <CloseIcon style={{ color: '#fff', fontSize: 40 }} /> : <CloseIcon style={{ color: '#fff', fontSize: 40 }} />}
                 </IconButton>
+              </div>
+              <div />
+
+              <div id='mainDrawer' >
+                <div id='mainDrawerItem' >
+                 <div> <Link to='/Home'> Web </Link></div>
+                 <div>  <Link to='/About'>About Us </Link> </div>
+                 <div> <Link to='/Project'>Project </Link></div>
+                <div> <Link to='/Contact'>Contact Us </Link></div>
                 </div>
 
-                <SwipeableDrawer
-                  open={state.left}
-                  onClose={toggleDrawer('left', false)}
-                  onOpen={toggleDrawer('left', true)}
-                >
-                  {/* {sideList('left')} */}
-                </SwipeableDrawer>
-                <SwipeableDrawer
-                  anchor="top"
-                  open={state.top}
-                  onClose={toggleDrawer('top', false)}
-                  onOpen={toggleDrawer('top', true)}
-                >
-                  {/* {fullList('top')} */}
-                </SwipeableDrawer>
-
-                <Typography className={classes.title} noWrap>
-                  {/* <Link to='/'>
-                    <img src={require('../../../assets/img/Untitled-1.png')} style={{ height: '80px' }} id='logo_img' alt='img' /> 
-                     </Link> */}
-                </Typography>
+              </div>
+            </div>
 
 
-                <article className={classes.MenuBTNNavContiner}>
-                  <span className={classes.spann} id='abou_sh' > <Link to='/'>
-                    {ctx.value.Lang === 'en' ? <span> Home</span> : <span>الرئيسية</span>}
-                  </Link>   </span>
-                  <span className={classes.spann} id='abou_sh' > <Link to='/#'>
-                    {ctx.value.Lang === 'en' ? <span> About Us </span> : <span>عن الشركة</span>}
-                  </Link>   </span>
-                  <span className={classes.spann} id='abou_sh'> <Link to='/#'>
-                    {ctx.value.Lang === 'en' ? <span>Our Works</span> : <span>المنتجات</span>}
-                  </Link>  </span>
-                  <span className={classes.spann} id='abou_sh' ><Link to='/#' >
-                    {ctx.value.Lang === 'en' ? <span>Contact Us</span> : <span>تواصل معنا</span>}
-                  </Link>  </span>
-                  {/* <div className="dropdown" id='abou_sh' >
-                    {ctx.value.Lang === 'en' ? <span>language</span> : <span>اللغة</span>}
 
-                    <div className="dropdown-content">
-                      <div id='Bt_link' onClick={() => {
-                        localStorage.setItem('Lang', 'ar')
-                        window.location.reload()
-                      }} >   Arabic  </div>
-                      <div id='Bt_link' onClick={() => {
-                        localStorage.setItem('Lang', 'en')
-                        window.location.reload()
-                      }} >    English  </div>
+          </Drawer>
 
-                    </div>
+        </div>
 
-                  </div> */}
-                  <span className={classes.spann}>
-                    {(cookies.get("auth") === 'lgoin') ? (
-                      <span className={classes.spann} id='abou_sh' > <Link to='/Orders'>
-                        {ctx.value.Lang === 'en' ? <span> Dashboard </span> : <span>لوحة التحكم</span>}
-                      </Link>   </span>
-                    ) : (
-                      null)}
-                  </span>
-                </article>
-              </Toolbar>
+      
 
 
-              <React.Fragment >
-                <Drawer anchor={'left'} open={state['left']} onClose={toggleDrawer('left', false)}>
-                  <div style={{ backgroundColor: '#221a1c', minHeight: '100%' }}
-                    className={classes.list}
-                    role="presentation"
-               
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5%', paddingBottom: '5%' }}  >
-                      {/* <img src={require('../../../assets/img/Untitled-1.png')} style={{ height: 100, marginTop: '12%', borderRadius: 300 }} alt='img' />  */}
-                    </div>
-                    <Link to='/'>    <List style={{ marginTop: '15%' }} >
-                      {['Home'].map((text, index) => (
-                        <ListItem button key={text}>
-                          <ListItemIcon>{index % 2 === 0 ? <HomeIcon className='side_text' /> : <HomeIcon className='side_text' />}</ListItemIcon>
-                          <ListItemText primary={text} className='side_text' />
-                        </ListItem>
-                      ))}
-                    </List> </Link>
-                    <Divider />
-                    <Link to='/About'>   <List>
-                      {['About Us'].map((text, index) => (
-                        <ListItem button key={text}>
-                          <ListItemIcon>{index % 2 === 0 ? <InfoIcon className='side_text' /> : <InfoIcon className='side_text' />}</ListItemIcon>
-                          <ListItemText primary={text} className='side_text' />
-                        </ListItem>
-                      ))}
-                    </List> </Link>
-                    <Divider />
-                    <Link to='/Contact'>
-                      <List>
-                        {['Contact Us'].map((text, index) => (
-                          <ListItem button key={text}>
-                            <ListItemIcon  >{index % 2 === 0 ? <ContactPhoneIcon className='side_text' /> : <ContactPhoneIcon className='side_text' />}</ListItemIcon>
-                            <ListItemText primary={text} className='side_text' />
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Link>
-                    <Divider />
-                  </div>
-                </Drawer>
-              </React.Fragment>
-            </AppBar>
-          </div>
 
-        )
-      }}
-    </Context.Consumer>
+
+
+   
 
 
 
   );
+
 }
+
 const debounce = (fn) => {
 
   // This holds the requestAnimationFrame reference, so we can cancel it if we wish
@@ -269,4 +207,3 @@ document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 
 // Update scroll position for first time
 storeScroll();
-export default SearchAppBar;
